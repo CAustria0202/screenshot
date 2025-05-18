@@ -3,7 +3,7 @@ name: Daily Playwright Screenshot
 on:
   schedule:
     - cron: '0 8 * * *'  # Runs at 08:00 UTC every day
-  workflow_dispatch:   # Allows manual trigger from GitHub UI
+  workflow_dispatch:     # Allows manual trigger from GitHub UI
 
 jobs:
   take-screenshot:
@@ -25,7 +25,7 @@ jobs:
         run: npx tsx scripts/screenshot.ts
 
       - name: Upload screenshots as artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3  # or @v2 to test
         with:
           name: screenshots
           path: '*.png'
