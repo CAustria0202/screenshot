@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Run screenshot script
-        run: npm run screenshot
+        run: npx tsx scripts/screenshot.ts
 
       - name: Upload screenshots as artifacts
         uses: actions/upload-artifact@v3
