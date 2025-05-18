@@ -1,0 +1,32 @@
+name: Daily Playwright Screenshot
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Runs at 08:00 UTC every day
+  workflow_dispatch:   # Allows manual trigger from GitHub UI
+
+jobs:
+  take-screenshot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run screenshot script
+        run: npm run screenshot
+
+      - name: Upload screenshots as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots
+          path: '*.png'
+          retention-days: 7
