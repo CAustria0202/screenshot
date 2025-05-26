@@ -1,0 +1,42 @@
+name: Run API Tests with Newman
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  newman-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Install Newman & HTMLExtra Reporter
+      run: |
+        npm install -g newman newman-reporter-htmlextra
+
+    - name: Download Postman Environment
+      run: |
+        curl "https://api.getpostman.com/environments/43713612-141a5293-ae71-4eba-9a8d-9988899e7582?apikey=${{ secrets.POSTMAN_API_KEY }}" \
+        -o postman_environment.json
+
+    - name: Inject Secrets into Environment
+      run: |
+        sed -i "s|\"key\": \"bearerToken\", \"value\": \"[^\"]*\"|\"key\": \"bearerToken\", \"value\": \"${{ secrets.ACCESS_TOKEN }}\"|g" postman_environment.json
+
+    - name: Run Newman Tests
+      run: |
+        newman run "https://api.getpostman.com/collections/43713612-53d0c21a-f8dc-4675-9c20-aa5765532a13?apikey=${{ secrets.POSTMAN_API_KEY }}" \
+          -e postman_environment.json \
+          -r cli,htmlextra \
+          --reporter-htmlextra-export newman/report.html \
+          --reporter-htmlextra-browserTitle "CRS Automation Test Summary Report" \
+          --reporter-htmlextra-title "CRS API Test Dashboard"
+
+    - name: Upload HTML Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: CRS-API-Test-Report
+        path: newman/report.html
