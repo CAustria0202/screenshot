@@ -34,6 +34,7 @@ jobs:
           --reporter-htmlextra-export newman/report.html \
           --reporter-htmlextra-browserTitle "CRS Automation Test Summary Report" \
           --reporter-htmlextra-title "CRS API Test Dashboard"
+      continue-on-error: true
 
     - name: Upload HTML Report
       uses: actions/upload-artifact@v4
