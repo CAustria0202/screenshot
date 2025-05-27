@@ -30,5 +30,6 @@ import { chromium, devices, BrowserContextOptions } from 'playwright';
     await browser.close();
   } catch (error) {
     console.error('Error taking screenshots with Playwright:', error);
+    process.exit(1)
   }
 })();
