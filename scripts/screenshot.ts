@@ -4,7 +4,7 @@ import { chromium, devices, BrowserContextOptions } from 'playwright';
   const urlToScreenshot = 'https://toyotacarrental.com.ph/';
   const dateSuffix = new Date().toISOString().split('T')[0];
 
-  const browser = await chromium.launch();
+  // const browser = await chromium.launch();
 
   // Helper function to take screenshot with given context options and filename prefix
   async function takeScreenshot(contextOptions: BrowserContextOptions, prefix: string) {
