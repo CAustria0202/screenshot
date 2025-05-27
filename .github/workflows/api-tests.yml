@@ -19,7 +19,7 @@ jobs:
 
     - name: Download Postman Environment
       run: |
-        curl "https://api.getpostman.com/environments/43713612-141a5293-ae71-4eba-9a8d-9988899e7582?apikey=${{ secrets.POSTMAN_API_KEY }}" \
+        curl "https://api.getpostman.com/environments/${{ secrets.POSTMAN_ENVIRONMENT }}?apikey=${{ secrets.POSTMAN_API_KEY }}" \
         -o postman_environment.json
 
     - name: Inject Secrets into Environment
@@ -28,7 +28,7 @@ jobs:
 
     - name: Run Newman Tests
       run: |
-        newman run "https://api.getpostman.com/collections/43713612-53d0c21a-f8dc-4675-9c20-aa5765532a13?apikey=${{ secrets.POSTMAN_API_KEY }}" \
+        newman run "https://api.getpostman.com/collections/${{ secrets.POSTMAN_COLLECTION }}?apikey=${{ secrets.POSTMAN_API_KEY }}" \
           -e postman_environment.json \
           -r cli,htmlextra \
           --reporter-htmlextra-export newman/report.html \
