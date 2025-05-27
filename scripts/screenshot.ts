@@ -4,12 +4,12 @@ import { chromium, devices, BrowserContextOptions } from 'playwright';
   const urlToScreenshot = 'https://toyotacarrental.com.ph/';
   const dateSuffix = new Date().toISOString().split('T')[0];
 
-  const browser = await chromium.launch();
+  const browser = await chromium.launch
 
   // Helper function to take screenshot with given context options and filename prefix
   async function takeScreenshot(contextOptions: BrowserContextOptions, prefix: string) {
-    const context = await browser.newContext(contextOptions);
-    const page = await context.newPage();
+    const context = await browser;
+    const page = await context.newPage
     await page.goto(urlToScreenshot, { waitUntil: 'load' });
     const filename = `${prefix}_${urlToScreenshot.replace(/https?:\/\//, '').replace(/[\/:?&=]/g, '_')}_${dateSuffix}.png`;
     await page.screenshot({ path: filename, fullPage: true });
@@ -31,4 +31,6 @@ import { chromium, devices, BrowserContextOptions } from 'playwright';
   } catch (error) {
     console.error('Error taking screenshots with Playwright:', error);
   }
-}();
+
+  //To verify before and after code snippet
+})();
