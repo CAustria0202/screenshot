@@ -1,6 +1,6 @@
-import { headerToHaveText } from 'e2e/utils/helper'
+import { headerToHaveText } from '../utils/helper'
 import { test as setup, expect } from '../utils/fixtures'
-import { getLatestResetPassword } from 'e2e/utils/mailosaurHelper'
+import { getLatestResetPassword } from '../utils/mailosaurHelper'
 import fs from 'fs'
 import path from 'path'
 

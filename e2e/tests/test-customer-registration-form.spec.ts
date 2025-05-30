@@ -1,6 +1,6 @@
 import path from 'path'
 import { test, expect } from '../utils/fixtures'
-import { expectInputValue, expectLocatorTobeVisible, expectNotToHaveValue, expectToContainText } from 'e2e/utils/helper'
+import { expectInputValue, expectLocatorTobeVisible, expectNotToHaveValue, expectToContainText } from '../utils/helper'
 
 test.use({ storageState: '.auth/register.json' })
 

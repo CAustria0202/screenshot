@@ -1,5 +1,5 @@
 import { type Page, type Locator } from '@playwright/test'
-import { expectLocatorTobeVisible } from 'e2e/utils/helper'
+import { expectLocatorTobeVisible } from '../utils/helper'
 
 export class CustomerRegistrationForm {
     public page: Page

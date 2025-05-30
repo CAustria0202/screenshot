@@ -1,4 +1,4 @@
-import { expectLocatorTobeVisible } from 'e2e/utils/helper'
+import { expectLocatorTobeVisible } from '../utils/helper'
 import { test, expect } from '../utils/fixtures'
 
 test.use({ storageState: '.auth/login.json' })

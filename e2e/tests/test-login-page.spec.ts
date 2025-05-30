@@ -1,6 +1,6 @@
-import { expectLocatorTobeVisible, generateRandomPassword, headerToHaveText } from 'e2e/utils/helper'
+import { expectLocatorTobeVisible, generateRandomPassword, headerToHaveText } from '../utils/helper'
 import { test, expect } from '../utils/fixtures'
-import { getLatestOTP, getLatestResetPassword, waitForNewOTP } from 'e2e/utils/mailosaurHelper'
+import { getLatestOTP, getLatestResetPassword, waitForNewOTP } from '../utils/mailosaurHelper'
 
 const emailAddress = 'taken-plane@shtah1xf.mailosaur.net'
 const password = 'Bfte9136!'

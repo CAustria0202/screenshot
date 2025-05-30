@@ -1,5 +1,5 @@
 import { expect, type Page, type Locator } from '@playwright/test'
-import { expectLocatorTobeVisible, expectToContainText } from 'e2e/utils/helper'
+import { expectLocatorTobeVisible, expectToContainText } from '../utils/helper'
 
 export class bookingFeatures {
     public page: Page

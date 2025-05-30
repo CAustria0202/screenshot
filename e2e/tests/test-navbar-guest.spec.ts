@@ -1,4 +1,4 @@
-import { expectLocatorTobeVisible, headerToHaveText } from 'e2e/utils/helper'
+import { expectLocatorTobeVisible, headerToHaveText } from '../utils/helper'
 import { test, expect } from '../utils/fixtures'
 
 test.beforeEach(async ({ page, context}) => {

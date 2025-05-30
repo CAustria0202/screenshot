@@ -1,7 +1,7 @@
 import path from 'path';
 import { test, expect } from '../utils/fixtures'
-import { getLatestOTP, waitForNewOTP } from 'e2e/utils/mailosaurHelper'
-import { expectLocatorTobeVisible, generateRandomEmail, generateRandomNumber } from 'e2e/utils/helper';
+import { getLatestOTP, waitForNewOTP } from '../utils/mailosaurHelper'
+import { expectLocatorTobeVisible, generateRandomEmail, generateRandomNumber } from '../utils/helper';
 
 const phoneNumber = generateRandomNumber()
 const emailAddress = generateRandomEmail()

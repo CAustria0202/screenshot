@@ -1,4 +1,4 @@
-import { expectInputValue, expectLocatorTobeVisible, headerToHaveText } from 'e2e/utils/helper'
+import { expectInputValue, expectLocatorTobeVisible, headerToHaveText } from '../utils/helper'
 import { test, expect } from '../utils/fixtures'
 
 const expectedValues = [

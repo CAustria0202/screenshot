@@ -1,6 +1,6 @@
-import { generateRandomEmail } from 'e2e/utils/helper';
+import { generateRandomEmail } from '../utils/helper';
 import { test as setup, expect } from '../utils/fixtures'
-import { getLatestOTP } from 'e2e/utils/mailosaurHelper'
+import { getLatestOTP } from '../utils/mailosaurHelper'
 
 export const emailAddress = generateRandomEmail()
 export const password = 'Bfte9136!'

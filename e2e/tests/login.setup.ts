@@ -1,5 +1,5 @@
 import { expect, test as setup } from '../utils/fixtures'
-import { headerToHaveText } from 'e2e/utils/helper'
+import { headerToHaveText } from '../utils/helper'
 
 const emailAddress = 'taken-plane@shtah1xf.mailosaur.net'
 const password = 'Bfte9136!'
