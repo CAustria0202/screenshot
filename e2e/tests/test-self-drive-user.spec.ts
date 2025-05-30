@@ -386,7 +386,7 @@ test.describe('Self-Drive Full Process of Booking', () => {
         }
 
         await book.seeBookingList();
-        await book.ViewDetails(bookingID, 'September 10, 2025 | 11:00');
+        await book.ViewDetails(bookingID);
 
         await expectLocatorTobeVisible(book.page.getByText('Payment Details'))
     })
@@ -404,7 +404,7 @@ test.describe('Self-Drive Full Process of Booking', () => {
 })
 
 test.describe('Verify user input data is retained through the booking flow', () => {
-    // test.slow()
+    test.slow()
     test('Self-Driven @smoke', async ({ book }) => {
         const start = 'September 23, 2025 | 08:30'
         const end = 'September 24, 2025 | 08:30'
@@ -468,8 +468,8 @@ test.describe('Verify user input data is retained through the booking flow', () 
 
 
     test('Chauffeur-Driven @smoke', async ({ book }) => {
-        const start = 'September 9, 2025 | 07:00'
-        const end = 'September 9, 2025 | 16:00'
+        const start = 'September 09, 2025 | 07:00'
+        const end = 'September 09, 2025 | 16:00'
 
         await book.homepage()
         await book.chauffeurButton()
