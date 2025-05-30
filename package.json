@@ -11,8 +11,8 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@playwright/test": "^1.52.0",
     "@types/node": "^22.15.18",
-    "playwright": "^1.52.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
