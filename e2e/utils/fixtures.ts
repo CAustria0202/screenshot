@@ -1,11 +1,11 @@
 import {test as base} from '@playwright/test'
 import { RegisterPage } from '../pages/registrationPage'
 import { CustomerRegistrationForm } from '../pages/customerRegistrationForm'
-import { homePage } from 'e2e/pages/homePage'
-import { navBar_Guest } from 'e2e/pages/navBarGuest'
-import { FooterModule } from 'e2e/pages/footer'
-import { bookingFeatures } from 'e2e/pages/bookingFeatures'
-import { loginPage } from 'e2e/pages/loginPage'
+import { homePage } from '../pages/homePage'
+import { navBar_Guest } from '../pages/navBarGuest'
+import { FooterModule } from '../pages/footer'
+import { bookingFeatures } from '../pages/bookingFeatures'
+import { loginPage } from '../pages/loginPage'
 
 
 type MyFixtures = {
