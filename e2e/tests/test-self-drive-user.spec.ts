@@ -418,6 +418,7 @@ test.describe('Verify user input data is retained through the booking flow', () 
 
         // Verify the start and return date on Vehicle Selection
         await book.bookingDate(start, end)
+        await book.waitForVehicleAvailabilityToLoad()
         await book.waitForImages()
         await book.choosePickVehicle()
 
@@ -489,6 +490,7 @@ test.describe('Verify user input data is retained through the booking flow', () 
 
         // Verify the start and return date on Vehicle Selection
         await book.bookingDate(start, end)
+        await book.waitForVehicleAvailabilityToLoad()
         await book.waitForImages()
         await book.choosePickVehicle()
 
@@ -559,6 +561,7 @@ test.describe('Verify user input data is retained through the booking flow', () 
 
         // Verify the start and return date on Vehicle Selection
         await book.bookingDate(start, end)
+        await book.waitForVehicleAvailabilityToLoad()
         await book.waitForImages()
         await book.choosePickVehicle()
 

@@ -655,4 +655,9 @@ export class bookingFeatures {
         }
     }
 
+    async waitForVehicleAvailabilityToLoad() {
+        await this.page.locator('text=Getting the latest vehicle availability...').waitFor({ state: 'detached' });
+    }
+
+
 }
