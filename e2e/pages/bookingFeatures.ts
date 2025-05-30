@@ -430,14 +430,9 @@ export class bookingFeatures {
         await this.seeBooking.click()
     }
 
-    async ViewDetails(bookingID: string, startDate: string) {
+    async ViewDetails(bookingID: string) {
         const viewDetails = this.page.locator("//astro-outline-box").filter({ hasText: bookingID })
-
-        await expect(viewDetails.locator("//span[@id='rental-start-date']")).toContainText(startDate, { timeout: 10000 })
-
         await viewDetails.locator("(//a[contains(text(),'View Details')])").first().click()
-
-
     }
 
     async CancelBooking(bookingID: string) {

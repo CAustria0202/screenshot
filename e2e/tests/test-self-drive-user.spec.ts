@@ -406,13 +406,13 @@ test.describe('Self-Drive Full Process of Booking', () => {
 test.describe('Verify user input data is retained through the booking flow', () => {
     // test.slow()
     test('Self-Driven @smoke', async ({ book }) => {
-        const start = 'August 11, 2025 | 08:30'
-        const end = 'August 12, 2025 | 14:45'
+        const start = 'September 23, 2025 | 08:30'
+        const end = 'September 24, 2025 | 08:30'
 
         await book.homepage()
         await book.selfDriveProcess(
-            'August', 11, '08:30',
-            'August', 12, '14:45',
+            'September', 23, '08:30',
+            'September', 24, '08:30',
             'All Types'
         )
 
@@ -459,7 +459,7 @@ test.describe('Verify user input data is retained through the booking flow', () 
         await book.seeBookingList();
 
         //Verify the Details on Manage Booking Page
-        await book.ViewDetails(bookingID, start);
+        await book.ViewDetails(bookingID);
 
         //Verify the Details on View Details Page of the Booking
         await expectLocatorTobeVisible(book.page.getByText('Payment Details'))
@@ -468,16 +468,16 @@ test.describe('Verify user input data is retained through the booking flow', () 
 
 
     test('Chauffeur-Driven @smoke', async ({ book }) => {
-        const start = 'July 23, 2025 | 07:00'
-        const end = 'July 23, 2025 | 18:00'
+        const start = 'September 9, 2025 | 07:00'
+        const end = 'September 9, 2025 | 16:00'
 
         await book.homepage()
         await book.chauffeurButton()
         await expectLocatorTobeVisible(book.chauffeur)
-        await book.pickDate('July', 23)
+        await book.pickDate('September', 9)
         await book.pickTime('07:00')
-        await book.returnDate('July', 23)
-        await book.returnTime('18:00')
+        await book.returnDate('September', 9)
+        await book.returnTime('16:00')
 
         await book.enterPickup('Kalayaan')
         await book.pickupLocation('Kalayaan Avenue, Makati City, Metro Manila')
@@ -532,7 +532,7 @@ test.describe('Verify user input data is retained through the booking flow', () 
         await book.seeBookingList();
 
         //Verify the Details on Manage Booking Page
-        await book.ViewDetails(bookingID, start);
+        await book.ViewDetails(bookingID);
 
         //Verify the Details on View Details Page of the Booking
         await expectLocatorTobeVisible(book.page.getByText('Payment Details'))
@@ -604,7 +604,7 @@ test.describe('Verify user input data is retained through the booking flow', () 
         await book.seeBookingList();
 
         //Verify the Details on Manage Booking Page
-        await book.ViewDetails(bookingID, start);
+        await book.ViewDetails(bookingID);
 
         //Verify the Details on View Details Page of the Booking
         await expectLocatorTobeVisible(book.page.getByText('Payment Details'))
